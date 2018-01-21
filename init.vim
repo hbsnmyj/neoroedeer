@@ -15,12 +15,26 @@ set termguicolors
 set background=dark
 color solarized
 set number
+set ruler
 
 
 " file type
+syntax enable
 filetype plugin indent on
 
-" indent
+" indent and linebreaks
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set nowrap
+set list listchars=tab:▸-,trail:·
+
+" search
+
+set hlsearch
+set incsearch
+set ignorecase
+
+set backupdir^=~/.config/nvim/_backup//    " where to put backup files.
+set directory^=~/.config/nvim/_temp//      " where to put swap files.
+set smartcase
