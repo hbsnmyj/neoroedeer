@@ -4,6 +4,7 @@ call plug#begin()
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
 let g:airline_powerline_fonts = 1
 
@@ -38,3 +39,7 @@ set ignorecase
 set backupdir^=~/.config/nvim/_backup//    " where to put backup files.
 set directory^=~/.config/nvim/_temp//      " where to put swap files.
 set smartcase
+
+" key map
+let mapleader = "\\"
+map <leader>n :NERDTreeToggle<CR>
