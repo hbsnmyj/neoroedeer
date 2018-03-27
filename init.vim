@@ -8,6 +8,15 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'frace/vim-bubbles'
 Plug 'vhdirk/vim-cmake'
+Plug 'tpope/vim-unimpaired'
+Plug 'mileszs/ack.vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 let g:airline_powerline_fonts = 1
 
