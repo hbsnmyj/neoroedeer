@@ -17,8 +17,12 @@ Plug 'honza/vim-snippets'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'Valloric/YouCompleteMe'
 
 let g:airline_powerline_fonts = 1
+let g:ycm_server_python_interpreter = 'python2'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '$HOME/.ycm_extra_conf.py'
 
 call plug#end()
 
