@@ -5,7 +5,9 @@ call plug#begin()
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdcommenter'
 Plug 'frace/vim-bubbles'
+Plug 'vhdirk/vim-cmake'
 
 let g:airline_powerline_fonts = 1
 
