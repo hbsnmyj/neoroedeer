@@ -18,11 +18,14 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe'
+Plug 'mhinz/neovim-remote'
+Plug 'lervag/vimtex'
 
 let g:airline_powerline_fonts = 1
-let g:ycm_server_python_interpreter = 'python2'
+let g:ycm_server_python_interpreter = 'python3'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '$HOME/.ycm_extra_conf.py'
+let g:vimtex_compiler_progname = 'nvr'
 
 call plug#end()
 
@@ -33,6 +36,7 @@ set background=dark
 color solarized
 set number
 set ruler
+set mouse=a
 
 
 " file type
