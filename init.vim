@@ -20,6 +20,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'mhinz/neovim-remote'
 Plug 'lervag/vimtex'
+Plug 'rdnetto/YCM-Generator'
 
 let g:airline_powerline_fonts = 1
 let g:ycm_server_python_interpreter = 'python3'
@@ -75,6 +76,9 @@ set smartcase
 " key map
 let mapleader = "\\"
 map <leader>n :NERDTreeToggle<CR>
+
+let &makeprg = 'cmake --build build'
+map <F9> :make<CR>
 
 " mappings taken from janus
 
