@@ -21,24 +21,34 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'mhinz/neovim-remote'
 Plug 'lervag/vimtex'
 Plug 'rdnetto/YCM-Generator'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 let g:airline_powerline_fonts = 1
 let g:ycm_server_python_interpreter = 'python3'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '$HOME/.ycm_extra_conf.py'
 let g:vimtex_compiler_progname = 'nvr'
+"let g:vimtex_view_method = 'mupdf'
+"let g:vimtex_view_general_viewer = 'okular'
+"let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+"let g:vimtex_view_general_options_latexmk = '--unique'
 
 call plug#end()
 
 " Appearance
 
 set termguicolors
-set background=dark
+set background=light
 color solarized
 set number
 set ruler
 set mouse=a
+set modelineexpr
 
+noremap <silent> k gk
+noremap <silent> j gj
+noremap <silent> 0 g0
+noremap <silent> $ g$
 
 " file type
 syntax enable
