@@ -1,4 +1,3 @@
 return {
-  {'akinsho/toggleterm.nvim', version = "*", opts = { shade_terminals = false }}
+	{ "akinsho/toggleterm.nvim", version = "*", opts = { shade_terminals = false } },
 }
-
