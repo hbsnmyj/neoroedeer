@@ -1,3 +1,3 @@
 return {
-	{ "lewis6991/gitsigns.nvim", setup = {} },
+	{ "lewis6991/gitsigns.nvim", opts = {} },
 }
