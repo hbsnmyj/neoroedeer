@@ -44,4 +44,5 @@ return {
       },
     },
   },
+  { "frace/vim-bubbles" },
 }
