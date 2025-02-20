@@ -4,8 +4,8 @@ return {
   event = "VeryLazy",
   ft = { "org" },
   opts = {
-    org_agenda_files = "~/projects/org/**/*",
-    org_default_notes_file = "~/projects/org/refile.org",
+    org_agenda_files = neoroedeer.extra_options.org.root .. "/**/*.org",
+    org_default_notes_file = neoroedeer.extra_options.org.root .. "/refile.org",
     org_todo_keywords = { "TODO(t)", "WAIT(w)", "IN_PROGRESS(i)", "|", "DONE(d)", "CANCEL(c)" },
     org_startup_indented = true,
     org_archive_location = "archive/%s_archive::",
@@ -56,6 +56,29 @@ return {
       mode = "i",
       silent = true,
       buffer = true,
+    },
+    {
+      "<leader>ofr",
+      function()
+        require("telescope").extensions.orgmode.refile_heading({})
+      end,
+      mode = "n",
+    },
+    {
+      "<leader>ofh",
+      function()
+        require("telescope").extensions.orgmode.search_headings({})
+      end,
+      mode = "n",
+    },
+    {
+      "<leader>off",
+      function()
+        require("telescope").extensions.orgmode.search_headings({
+          mode = "orgfiles",
+        })
+      end,
+      mode = "n",
     },
   },
 }

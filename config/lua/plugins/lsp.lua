@@ -109,7 +109,7 @@ return {
         documentation = {
           auto_show = true,
           window = {
-            border = "single",
+            border = "double",
           },
         },
         list = {
@@ -118,6 +118,7 @@ return {
           },
         },
         menu = {
+          border = "single",
           draw = {
             treesitter = { "lsp" },
             columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "source_name" } },
@@ -127,6 +128,9 @@ return {
 
       signature = {
         enabled = true,
+        window = {
+          border = "single",
+        },
       },
 
       -- Default list of enabled providers defined so that you can extend it
@@ -223,6 +227,36 @@ return {
     init = function()
       -- If you want the formatexpr, here is the place to set it
       vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+    end,
+  },
+  {
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {},
+    lazy = false,
+    config = function()
+      require("refactoring").setup(opts)
+    end,
+  },
+  {
+    "nvim-lua/lsp-status.nvim",
+    config = function()
+      local lsp_status = require("lsp-status")
+      lsp_status.register_progress()
     end,
   },
 }

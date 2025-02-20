@@ -12,3 +12,7 @@ vim.opt.ignorecase = true
 vim.opt.number = true
 vim.opt.ruler = true
 vim.opt.modelineexpr = true
+vim.opt.cursorline = true
+
+vim.opt.termguicolors = true
+vim.opt.wrap = false
