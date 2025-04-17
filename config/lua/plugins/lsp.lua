@@ -313,9 +313,95 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
-    opts = {},
-    lazy = false,
-    config = function()
+    opts = {
+      show_success_message = true,
+    },
+    keys = {
+      { "<leader>cr", "", desc = "+refactor", mode = { "n", "v" } },
+      -- {
+      --   "<leader>crs",
+      --   pick,
+      --   mode = "v",
+      --   desc = "Refactor",
+      -- },
+      {
+        "<leader>cri",
+        function()
+          require("refactoring").refactor("Inline Variable")
+        end,
+        mode = { "n", "v" },
+        desc = "Inline Variable",
+      },
+      {
+        "<leader>crb",
+        function()
+          require("refactoring").refactor("Extract Block")
+        end,
+        desc = "Extract Block",
+      },
+      {
+        "<leader>crf",
+        function()
+          require("refactoring").refactor("Extract Block To File")
+        end,
+        desc = "Extract Block To File",
+      },
+      {
+        "<leader>crP",
+        function()
+          require("refactoring").debug.printf({ below = false })
+        end,
+        desc = "Debug Print",
+      },
+      {
+        "<leader>crp",
+        function()
+          require("refactoring").debug.print_var({ normal = true })
+        end,
+        desc = "Debug Print Variable",
+      },
+      {
+        "<leader>crc",
+        function()
+          require("refactoring").debug.cleanup({})
+        end,
+        desc = "Debug Cleanup",
+      },
+      {
+        "<leader>crf",
+        function()
+          require("refactoring").refactor("Extract Function")
+        end,
+        mode = "v",
+        desc = "Extract Function",
+      },
+      {
+        "<leader>crF",
+        function()
+          require("refactoring").refactor("Extract Function To File")
+        end,
+        mode = "v",
+        desc = "Extract Function To File",
+      },
+      {
+        "<leader>crx",
+        function()
+          require("refactoring").refactor("Extract Variable")
+        end,
+        mode = "v",
+        desc = "Extract Variable",
+      },
+      {
+        "<leader>crp",
+        function()
+          require("refactoring").debug.print_var()
+        end,
+        mode = "v",
+        desc = "Debug Print Variable",
+      },
+    },
+    event = { "BufReadPre", "BufNewFile" },
+    config = function(_, opts)
       require("refactoring").setup(opts)
     end,
   },
